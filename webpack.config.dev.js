@@ -1,33 +1,31 @@
-const webpack = require('webpack');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-process.env.NODE_ELEMENT = 'development';
+process.env.NODE_ENV = "development";
 
-module.export = {
-    mode: 'development',
-    target: 'web',
-    devtool: 'cheap-module-source-map',
-    entry: './src/index',
+module.exports = {
+    mode: "development",
+    target: "web",
+    devtool: "cheap-module-source-map",
+    entry: "./src/index",
     output: {
-        path: path.resolve(__dirname, 'build'),
-        publicPath: '/',
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, "build"),
+        publicPath: "/",
+        filename: "bundle.js"
     },
     devServer: {
-        stats: 'minimal',
+        stats: "minimal",
         overlay: true,
         historyApiFallback: true,
         disableHostCheck: true,
-        headers: {
-            "Access-Control-Allow-Origin": "*"
-        },
+        headers: { "Access-Control-Allow-Origin": "*" },
         https: false
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html',
-            favicon: 'src/favicon.ico'
+            template: "src/index.html",
+            favicon: "src/favicon.ico"
         })
     ],
     module: {
@@ -43,4 +41,4 @@ module.export = {
             }
         ]
     }
-}
+};
