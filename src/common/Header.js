@@ -6,6 +6,7 @@ export default function Header() {
     return (
         <na>
             <NavLink to="/" activeStyle={activeStyle} exact>Home</NavLink> {" | "}
+            <NavLink to="/courses" activeStyle={activeStyle} >Courses</NavLink> {" | "}
             <NavLink to="/about" activeStyle={activeStyle} >About</NavLink>
         </na>
     )
